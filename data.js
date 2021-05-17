@@ -29,14 +29,14 @@ var people = [
   },
   {
     name: 'Brandon',
-    gitHubUsername: 'brandonwharton'
+    githubUsername: 'brandonwharton'
   },
   {
     name: 'Ian',
-    gitHubUsername: 'isford'
+    githubUsername: 'isford'
   },
   {
     name: 'Terry',
-    gitHubUsername: 'TerryOKeefe'
+    githubUsername: 'TerryOKeefe'
   }
 ];

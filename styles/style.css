@@ -1,0 +1,4 @@
+.peoplePics {
+    display: flex;
+    flex-wrap: wrap;
+}
