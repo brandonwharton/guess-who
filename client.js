@@ -53,10 +53,18 @@ function correctPerson() {
     // console.log('You clicked someone!');
     // set a variable equal to the data of the person clicked
     personNumber = $(this).data('num');
-    console.log(personNumber);
+    // console.log(personNumber);
 
-   if(people[correctNumber] === people[personNumber]) {
-       console.log('Its the right person!');
-       
-   }
+    // checking for the right click
+    if(people[correctNumber] === people[personNumber]) {
+        console.log('Its the right person!');
+        // Display the correct message
+        $('#message').text('Correct!');
+        // run game again
+        populateName();
+    }
+    else {
+        // Display the incorrect
+        $('#message').text('Incorrect, try again!');
+    }
 } // end correctPerson
