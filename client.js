@@ -11,16 +11,16 @@ function readyNow() {
 
     // load images on DOM loadup
     appendPersonDivs();
-    // pick a person at random using correctPerson
+    // pick a person at random using populateName to start game
     populateName();
-    
-}
+} // end readyNow
+
 
 function appendPersonDivs() {
     // append a div containing profile pictures for everyone on people objects
     // run a loop on people array to get each person's info
     for (i=0; i < people.length; i++) {
-        // set each div picture to have data equal to their array index
+        // set each div picture to have data number equal to their array index
         $('#peopleDivs').append(`
             <div data-num=${i} class="clickable">
                 <img src="http://github.com/${people[i].githubUsername}.png?size=250" alt="Profile image of ${people[i].name}">
@@ -28,6 +28,7 @@ function appendPersonDivs() {
         `);
     }
 } // end appendPersonDivs
+
 
 // generate a random number
 function randomNumber(min, max) {
@@ -43,9 +44,7 @@ function populateName() {
     // append newly chosen person's name to DOM
     $('#personName').text(`
         Click On: ${people[number].name}
-    `)
-    // return new number for later use
-    return number;
+    `);
 } // end populateName
 
 
@@ -55,16 +54,16 @@ function correctPerson() {
     personNumber = $(this).data('num');
     // console.log(personNumber);
 
-    // checking for the right click
+    // checking for the right click using correctNumber vs data-generated personNumber
     if(people[correctNumber] === people[personNumber]) {
         console.log('Its the right person!');
         // Display the correct message
-        $('#message').text('Correct!');
-        // run game again
+        $('#message').text('You guessed correctly! Congrats!');
+        // run game again to reset
         populateName();
     }
     else {
-        // Display the incorrect
+        // Display the incorrect message
         $('#message').text('Incorrect, try again!');
     }
 } // end correctPerson
