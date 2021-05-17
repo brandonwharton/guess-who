@@ -13,10 +13,11 @@ function readyNow() {
 function appendPersonDivs() {
     // append a div containing profile pictures for everyone on people objects
     // run a loop on people array to get each person's info
-    for (let person of people) {
+    for (i=0; i < people.length; i++) {
+        
         $('#peopleDivs').append(`
-            <div>
-                <img src="http://github.com/${person.githubUsername}.png?size=250" alt="Profile image of ${person.name}">
+            <div data-num=${i}>
+                <img src="http://github.com/${people[i].githubUsername}.png?size=250" alt="Profile image of ${people[i].name}">
             </div>
         `);
     }
@@ -30,6 +31,6 @@ function populateName() {
     // call randomNumber using people array size
     let number = randomNumber(1, people.length)
     $('#personName').append(`
-        <p>${people[number].name}</p>
+        <h2>Click On: ${people[number].name}</h2>
     `)
 } // end populateName
