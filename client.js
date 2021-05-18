@@ -59,6 +59,15 @@ function correctPerson() {
         console.log('Its the right person!');
         // Display the correct message
         $('#message').text('You guessed correctly! Congrats!');
+        
+        // run showCorrecIndicator to make a message appear over picture
+        // $(this).closest('.clickable').append(`
+        // <p class="popupCorrect">Correct!</p>
+        // `);
+
+        // remove popup
+        // setTimeout($(this).closest('.clickable').find('p').remove(), 3000)
+
         // run game again to reset
         populateName();
     }
@@ -67,3 +76,9 @@ function correctPerson() {
         $('#message').text('Incorrect, try again!');
     }
 } // end correctPerson
+
+// function showCorrectIndicator() {
+//     $(this).closest('.clickable').append(`
+//         <p>Correct!</p>
+//     `);
+// }
